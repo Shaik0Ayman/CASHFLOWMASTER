@@ -1,5 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector
+
+
 root = Tk()
 def secwin():
     root.wm_state("iconic")
@@ -24,6 +27,13 @@ def firstwin():
     label3.pack()
     p = Entry(root, width=30)
     p.pack()
+    label6  = Label(root, text="enter your sql password:")
+    label6.pack()
+    s = Entry(root, width=30)
+    s.pack()
+    global sqlpass
+    sqlpass = s.get()
+    
     def check():
         user = u.get()
         passw = p.get()
@@ -37,5 +47,12 @@ def firstwin():
             Label(root, text= error).pack()
     button1 = Button(root, text="submit", command=check, padx=10, pady=10, fg="green" )    
     button1.pack()
+    
 firstwin()
 root.mainloop()
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password=sqlpass,
+    )
