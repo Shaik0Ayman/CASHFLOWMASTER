@@ -50,14 +50,3 @@ def firstwin():
     
 firstwin()
 root.mainloop()
-
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password=sqlpass,
-    database = "world"
-    )
-cursor = mydb.cursor()
-cursor.execute('select * from city ')
-for i in  cursor:
-   print(i)
