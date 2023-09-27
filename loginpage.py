@@ -8,7 +8,7 @@ def secwin():
     root.wm_state("iconic")
     top = Toplevel()
     top.title("CASH FLOW MASTER")
-    top.geometry("400x400")
+    top.geometry("400x500")
     label5 = Label(top, text="CASH FLOW MASTER")
     label5.pack()
 
