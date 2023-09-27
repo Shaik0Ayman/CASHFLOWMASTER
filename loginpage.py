@@ -1,9 +1,4 @@
-import mysql.connector
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="",
-)
+
 from tkinter import *
 from tkinter import messagebox
 root = Tk()
