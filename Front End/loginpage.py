@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import messagebox
 import mysql.connector
 
-
 root = Tk()
 def secwin():
     root.wm_state("iconic")
