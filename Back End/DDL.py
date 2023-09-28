@@ -11,13 +11,21 @@ mydb = mysql.connector.connect(
 
 c = mydb.cursor()
 
-def createdb(name):
-    c.execute("CREATE DATABASE {}".format(name))
+def createdb(dbname):
+    c.execute("CREATE DATABASE {}".format(dbname))
 
-def createtb(dbname, name):
+def createtb(dbname, tbname):
     c.execute("USE {}".format(dbname))
-    c.execute("CREATE TABLE {}".format(name))
+    c.execute("CREATE TABLE {}".format(tbname))
 
-def insert(dbname, name, value_list):
+def insert_rec(dbname, tbname, value_list):
     c.execute("USE {}".format(dbname))
-    c.execute("INSERT INTO {} VALUES{}".format(name, tuple(value_list)))
+    c.execute("INSERT INTO {} VALUES{}".format(tbname, tuple(value_list)))
+
+def delete_rec(dbname, tbname, field_name, del_value):
+    c.execute("USE {}".format(dbname))
+    c.execute("DELETE FROM {} WHERE {} = {}".format(tbname, field_name, del_value))
+
+def updatetb(dbname, tbname, condition, update):
+    c.execute("USE {}".format(dbname))
+    c.execute("UPDATE {} WHERE {} SET {}".format(tbname, condition, update))
