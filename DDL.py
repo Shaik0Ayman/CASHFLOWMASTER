@@ -16,6 +16,8 @@ try:
 except:
     pass
 
+
+
 def createtb(dbname, tbname):
     c.execute("USE {}".format(dbname))
     c.execute("CREATE TABLE {}".format(tbname))
