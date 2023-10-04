@@ -28,4 +28,4 @@ def delete_rec(dbname, tbname, field_name, del_value):
 
 def updatetb(dbname, tbname, condition, update):
     c.execute("USE {}".format(dbname))
-    c.execute("UPDATE {} WHERE {} SET {}".format(tbname, condition, update))
+    c.execute("UPDATE {} SET {} WHERE {}".format(tbname, update, condition))
