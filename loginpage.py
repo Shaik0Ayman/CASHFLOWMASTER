@@ -1,8 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
-import mysql.connector
-import DDL
+
 root = Tk()
+'''
 def secwin():
     root.wm_state("iconic")
     top = Toplevel()
@@ -46,7 +46,7 @@ def secwin():
         top2.title("CASH FLOW MASTER")
         top2.geometry("400x400")
     button3 = Button(top, text="VIEW DATA", command=view, padx=10, pady=10, )
-    button3.pack()
+    button3.pack()'''
 
     
 
@@ -67,7 +67,6 @@ def firstwin():
     label6.pack()
     s = Entry(root, width=30)
     s.pack()
-    
     def check():
         user = u.get()
         passw = p.get()
@@ -75,7 +74,9 @@ def firstwin():
             w = "welcome : " + u.get()
             label4 = Label(root, text= w)    
             label4.pack()
-            secwin()   
+            from page2 import secwin
+            secwin()
+
         else:
             error = messagebox.showwarning("inccorect password or username", "inccorect password or username")
             Label(root, text= error).pack()
