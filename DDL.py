@@ -1,9 +1,9 @@
-import mysql.connector
+import mysql.connector as m
 
 # Function to create a database or table
 # create(database or table , Name , if table then database name)
 mysql_pass = input("Enter your MySQL Password>>>")
-mydb = mysql.connector.connect(
+mydb = m.connect(
     host = "localhost", 
     user = "root",
     password = mysql_pass
@@ -11,7 +11,10 @@ mydb = mysql.connector.connect(
 
 c = mydb.cursor()
 dbname = 'CASHFLOWMASTER'
-
+try:
+    c.execute("CREATE DATABASE {}".format(dbname))
+except:
+    pass
 
 def createtb(dbname, tbname):
     c.execute("USE {}".format(dbname))
