@@ -18,6 +18,12 @@ def firstwin():
     label3.pack()
     p = Entry(root, width=30)
     p.pack()
+    label4  = Label(root, text="sql password:")
+    label4.pack()
+    S = Entry(root, width=30)
+    S.pack()
+    
+
     
     global password
     password = p.get()
