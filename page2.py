@@ -10,9 +10,9 @@ def secwin():
     label1 = Label(top, text="CASH FLOW MASTER")
     label1.pack() 
     def entry_():
-        from entrypage import entry
+        from page3E import entry
         entry()
-
+        top.destroy()
     button2 = Button(top, text="ENTER DATA", command=entry_, padx=10, pady=10,  )    
     button2.pack()
 
