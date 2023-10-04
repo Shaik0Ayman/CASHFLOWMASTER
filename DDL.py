@@ -10,9 +10,8 @@ mydb = mysql.connector.connect(
 )
 
 c = mydb.cursor()
+dbname = 'CASHFLOWMASTER'
 
-def createdb(dbname):
-    c.execute("CREATE DATABASE {}".format(dbname))
 
 def createtb(dbname, tbname):
     c.execute("USE {}".format(dbname))

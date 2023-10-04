@@ -1,13 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 import mysql.connector
-
-
+import DDL
 root = Tk()
-
-
-
-
 def secwin():
     root.wm_state("iconic")
     top = Toplevel()
