@@ -32,7 +32,7 @@ def firstwin():
             label4.pack()
             from page2 import secwin
             secwin()
-            root.destroy()
+            
             
         else:
             error = messagebox.showwarning("inccorect password or username", "inccorect password or username")
