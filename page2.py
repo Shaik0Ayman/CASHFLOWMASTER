@@ -5,8 +5,6 @@ def secwin():
     top.geometry("250x200")
     top.title("CASH FLOW MASTER")
     top.geometry("400x400")
-    
-    # Create labels and entry widgets for Monthly salary, Average expenditure, Asset name, and Asset value
     label1 = Label(top, text="CASH FLOW MASTER")
     label1.pack() 
     def entry_():
