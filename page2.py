@@ -4,7 +4,7 @@ top = Tk()
 def secwin():
     top.geometry("100x100")
     top.title("CASH FLOW MASTER")
-    top.geometry("100x100")
+    top.geometry("200x200")
     label1 = Label(top, text="CASH FLOW MASTER")
     label1.pack() 
     def entry_():

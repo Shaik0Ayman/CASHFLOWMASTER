@@ -22,6 +22,12 @@ def firstwin():
     label4.pack()
     p = Entry(root, width=30)
     p.pack()
+    label4  = Label(root, text="sql password:")
+    label4.pack()
+    S = Entry(root, width=30)
+    S.pack()
+    
+
     
 
     global passw
@@ -36,6 +42,7 @@ def firstwin():
             label4.pack()
             from page2 import secwin
             secwin()
+            root.destroy()
             
             
         else:
