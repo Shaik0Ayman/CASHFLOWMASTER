@@ -1,7 +1,8 @@
 import mysql.connector as m
 def init():
     from loginpage import sqlpass
-    mysql_pass = sqlpass()
+    #mysql_pass = sqlpass()
+    mysql_pass = password
     mydb = m.connect(
         host = "localhost", 
         user = "root",

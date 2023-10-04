@@ -42,8 +42,7 @@ def firstwin():
     
     button1 = Button(root, text="submit", command=check, padx=10, pady=10, fg="green" )    
     button1.pack()
-    
-def sqlpass():
-    return password 
+  
+
 firstwin()
 root.mainloop()
