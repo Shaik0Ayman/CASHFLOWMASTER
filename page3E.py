@@ -38,10 +38,12 @@ def entry():
             asset_value_entry = Entry(top, width=30)
             asset_value_entry.pack()
             def done():
+                asset = asset_name_entry.get()
+                asset_value = asset_value_entry.get() 
                 top.destroy()
+                return asset,asset_value
             button2 = Button(top, text="DONE ! ", padx=10, pady=10, command=done  )    
             button2.pack()
-            j += 1
         button1 = Button(top1, text="NEXT", command=next, padx=10, pady=10,  )
         button1.pack()
         
