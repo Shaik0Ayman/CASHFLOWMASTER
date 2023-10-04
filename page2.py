@@ -15,3 +15,8 @@ def secwin():
         top.destroy()
     button2 = Button(top, text="ENTER DATA", command=entry_, padx=10, pady=10,  )    
     button2.pack()
+    def view_():
+        from page3V import view 
+        view()
+    button3 = Button(top, text="VIEW DATA", command=view_, padx=10, pady=10,  )    
+    button3.pack()
