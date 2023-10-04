@@ -10,17 +10,23 @@ def firstwin():
     root.title("LOGIN PAGE")
     label1  = Label(root, text="CASH FLOW MASTER")
     label1.pack()
-    label2  = Label(root, text="enter username:")
+    label2  = Label(root, text="enter mysql password:")
     label2.pack()
+    mysqlpass = Entry(root, width=30)
+    mysqlpass.pack()
+    label3  = Label(root, text="enter username:")
+    label3.pack()
     u = Entry(root, width=30)
     u.pack()
-    label3  = Label(root, text="enter password:")
-    label3.pack()
+    label4  = Label(root, text="enter password:")
+    label4.pack()
     p = Entry(root, width=30)
     p.pack()
     
-    global password
-    password = p.get()
+
+    global passw
+    passw = mysqlpass.get()
+
     def check():
         user = u.get()
         passw = p.get()

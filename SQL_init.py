@@ -1,33 +1,17 @@
 import mysql.connector as m
-def init():
-    mysql_pass = password
-    mydb = m.connect(
-        host = "localhost", 
-        user = "root",
-        password = mysql_pass
-    )
+from loginpage import passw
+mydb = m.connect(
+    host = "localhost", 
+    user = "root",
+    password = passw
+)
 
-    c = mydb.cursor()
-    udb = "users_cashflowmaster"
-    db = "cashflowmaster"
-def showdb():
-    from loginpage import sqlpass
-    mysql_pass = sqlpass()
-    mydb = m.connect(
-        host = "localhost", 
-        user = "root",
-        password = mysql_pass
-    )
+c = mydb.cursor()
 
-    c = mydb.cursor()
+udb = "users_cashflowmaster"
+c.execute("CREATE DATABASE {}".format(udb))
+c.execute("USE {}".format(udb))
+c.execute("CREATE TABLE users(uid INT(20) PRIMARY KEY, username varchar(30), password varchar(16), income int(20), exp int(20), emi int(20)")
 
-    c.execute("SHOW DATABASES")
-    L1 = []
-    for i in c:
-        L1.append(i)
-    return L1
-def db(dbname):
-    c.execute("CREATE DATABASE {}".format(dbname))
-    c.execute("USE {}".format(dbname))
-    db(udb)
-    c.execute("CREATE TABLE users(uid INT(20) PRIMARY KEY, username varchar(30), password varchar(16)")'''
+def create_asset(username):
+    c.execute("CREATE TABLE assets_{}(asset_name varchar(20), asset_price int(20))".format(username))
