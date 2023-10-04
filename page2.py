@@ -2,9 +2,9 @@ from tkinter import *
 from tkinter import messagebox
 top = Tk()
 def secwin():
-    top.geometry("250x200")
+    top.geometry("100x100")
     top.title("CASH FLOW MASTER")
-    top.geometry("400x400")
+    top.geometry("100x100")
     label1 = Label(top, text="CASH FLOW MASTER")
     label1.pack() 
     def entry_():
