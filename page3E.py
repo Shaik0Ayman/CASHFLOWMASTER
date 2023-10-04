@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 top1 = Tk()
 def entry():
-    top1.geometry("400x500")
+    top1.geometry("300x300")
     monthly_salary_label = Label(top1, text="Monthly Salary:")
     monthly_salary_label.pack()
     monthly_salary_entry = Entry(top1, width=30)
