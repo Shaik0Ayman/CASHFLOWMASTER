@@ -1,7 +1,5 @@
 import mysql.connector as m
 def init():
-    from loginpage import sqlpass
-    #mysql_pass = sqlpass()
     mysql_pass = password
     mydb = m.connect(
         host = "localhost", 
@@ -32,4 +30,4 @@ def db(dbname):
     c.execute("CREATE DATABASE {}".format(dbname))
     c.execute("USE {}".format(dbname))
     db(udb)
-    c.execute("CREATE TABLE users(uid INT(20) PRIMARY KEY, username varchar(30), password varchar(16)")
+    c.execute("CREATE TABLE users(uid INT(20) PRIMARY KEY, username varchar(30), password varchar(16)")'''

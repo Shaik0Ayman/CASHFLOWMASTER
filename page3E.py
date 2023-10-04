@@ -1,7 +1,11 @@
-
+import mysql.connector as m
 from tkinter import *
 from tkinter import messagebox
+
 top1 = Tk()
+
+
+
 def entry():
     top1.geometry("500x500")
     monthly_salary_label = Label(top1, text="Monthly Salary:")

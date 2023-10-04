@@ -6,3 +6,4 @@ top2 = Tk()
 def view():
     label1  = Label(top2, text=showdb())
     label1.pack()
+networth 

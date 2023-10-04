@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import messagebox
 
+
 root = Tk()
 
 def firstwin():
@@ -17,12 +18,9 @@ def firstwin():
     label3.pack()
     p = Entry(root, width=30)
     p.pack()
-    label6  = Label(root, text="enter your sql password:")
-    label6.pack()
-    s = Entry(root, width=30)
-    s.pack()
+    
     global password
-    password = s.get()
+    password = p.get()
     def check():
         user = u.get()
         passw = p.get()
@@ -42,7 +40,7 @@ def firstwin():
     
     button1 = Button(root, text="submit", command=check, padx=10, pady=10, fg="green" )    
     button1.pack()
-  
+
 
 firstwin()
 root.mainloop()
