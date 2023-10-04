@@ -8,9 +8,15 @@ def secwin():
     
     # Create labels and entry widgets for Monthly salary, Average expenditure, Asset name, and Asset value
     label1 = Label(top, text="CASH FLOW MASTER")
-    label1.pack()
+    label1.pack() 
+    def entry_():
+        from entrypage import entry
+        entry()
 
-    global monthly_salary_entry, avg_expenditure_entry, asset_name_entry, asset_value_entry
+    button2 = Button(top, text="ENTER DATA", command=entry_, padx=10, pady=10,  )    
+    button2.pack()
+
+    '''global monthly_salary_entry, avg_expenditure_entry, asset_name_entry, asset_value_entry
 
     monthly_salary_label = Label(top, text="Monthly Salary:")
     monthly_salary_label.pack()
@@ -31,3 +37,4 @@ def secwin():
     asset_value_label.pack()
     asset_value_entry = Entry(top, width=30)
     asset_value_entry.pack()
+'''

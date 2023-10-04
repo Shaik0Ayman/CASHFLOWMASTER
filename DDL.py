@@ -2,7 +2,8 @@ import mysql.connector as m
 
 # Function to create a database or table
 # create(database or table , Name , if table then database name)
-mysql_pass = input("Enter your MySQL Password>>>")
+from loginpage import sqlpass
+mysql_pass = sqlpass()
 mydb = m.connect(
     host = "localhost", 
     user = "root",
