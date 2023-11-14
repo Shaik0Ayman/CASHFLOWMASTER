@@ -31,20 +31,15 @@ def firstwin():
     
 
     global passw
-    passw = mysqlpass.get()
+    sql_pass = mysqlpass.get()
 
     def check():
         user = u.get()
         passw = p.get()
-        if (user == "ayman" and passw == "ayman"):
-            w = "welcome : " + u.get()
-            label4 = Label(root, text= w)    
-            label4.pack()
+        if ():
+            root.destroy()
             from page2 import secwin
             secwin()
-            root.destroy()
-            
-            
         else:
             error = messagebox.showwarning("inccorect password or username", "inccorect password or username")
             Label(root, text= error).pack()
