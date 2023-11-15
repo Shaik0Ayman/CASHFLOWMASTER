@@ -27,6 +27,7 @@ def firstwin():
     
     def verify():
         try:
+            global c
             c = connect_cursor(sql_pass)
         except m.Error as e:
             error_mysql = messagebox.showwarning("ERROR", e)
@@ -40,7 +41,7 @@ def firstwin():
             error_auth = messagebox.showwarning("ERROR", "Incorrect username or password")
             Label(root, text= error_auth).pack()
 
-    button1 = Button(root, text="submit", command=verify, padx=10, pady=10, fg="green" )    
+    button1 = Button(root, text="submit", command=verify, padx=10, pady=10, bg="green" )    
     button1.pack()
 
 
