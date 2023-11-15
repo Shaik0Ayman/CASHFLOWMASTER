@@ -10,11 +10,8 @@ def firstwin():
     root.configure(bg="black")
     label1  = Label(root, text="CASH FLOW MASTER", fg = "white", bg = "black")
     label1.pack()
-    label2  = Label(root, text="enter mysql password:", fg = "white", bg = "black")
+    label2  = Label(root, text="", fg = "white", bg = "black")
     label2.pack()
-    sqlpass = Entry(root, width=30, fg = "white", bg = "black", show="*")
-    sqlpass.pack()
-    sql_pass = sqlpass.get()
     label3  = Label(root, text="enter username:", fg = "white", bg = "black")
     label3.pack()
     u = Entry(root, width=30, fg = "white", bg = "black")
@@ -28,8 +25,7 @@ def firstwin():
     
     def verify():
         try:
-            c = connect_cursor(sql_pass)
-            if user_check(c, username, user_password):
+            if (username == user_password):
                 root.destroy()
                 from page2 import secwin
                 secwin()
