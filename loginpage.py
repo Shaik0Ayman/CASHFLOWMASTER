@@ -23,6 +23,16 @@ def firstwin():
     p.pack()
     user_password = p.get()
     
+    def connect_cursor():
+        mydb = m.connect(
+            host="localhost",
+            user="root",
+            password="Pianist1"
+        )
+        cursor = mydb.cursor()
+        data_init(cursor)
+        return cursor
+
     def verify():
         try:
             if (username == user_password):
@@ -32,11 +42,9 @@ def firstwin():
             else:
                 error_auth = messagebox.showwarning("ERROR", "Incorrect username or password")
                 Label(root, text= error_auth).pack()
-            
-        except m.Error as e:
-            print('nah bro')
-            #error_mysql = messagebox.showwarning("ERROR", e)
-            #Label(root, text= error_mysql).pack()
+        except m.ProgrammingError as e:
+            error_mysql = messagebox.showwarning("ERROR", e)
+            Label(root, text= error_mysql).pack()
 
         
 

@@ -6,15 +6,6 @@ def data_init(cursor):
     cursor.execute("USE {}".format(udb))
     cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, password varchar(16), income int(20), exp int(20), emi int(20))")
 
-def connect_cursor(sql_pass):
-    mydb = m.connect(
-        host="localhost",
-        user="root",
-        password=sql_pass,
-    )
-    cursor = mydb.cursor()
-    data_init(cursor)
-    return cursor
 
 def create_user_tables(cursor, username):
     cursor.execute("CREATE TABLE assets_{}(asset_name varchar(20), asset_price int(20))".format(username))
