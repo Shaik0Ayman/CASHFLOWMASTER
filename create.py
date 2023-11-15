@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from SQL_init import *
+import pickle as pk
 
 root1 = Tk()
 
@@ -23,6 +23,8 @@ def win():
     p = Entry(root1, width=30, fg = "white", bg = "black", show="*")
     p.pack()
     global user_password
+    user_password = p.get()
+    
     def dis():
         try:
             with open('users.bin', 'rb') as f:
