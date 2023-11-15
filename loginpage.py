@@ -12,7 +12,7 @@ def firstwin():
     label1.pack()
     label2  = Label(root, text="enter mysql password:", fg = "white", bg = "black")
     label2.pack()
-    sqlpass = Entry(root, width=30, fg = "white", bg = "black")
+    sqlpass = Entry(root, width=30, fg = "white", bg = "black", show="*")
     sqlpass.pack()
     sql_pass = sqlpass.get()
     label3  = Label(root, text="enter username:", fg = "white", bg = "black")
@@ -22,7 +22,7 @@ def firstwin():
     username = u.get()
     label4  = Label(root, text="enter password:", fg = "white", bg = "black")
     label4.pack()
-    p = Entry(root, width=30, fg = "white", bg = "black")
+    p = Entry(root, width=30, fg = "white", bg = "black", show="*")
     p.pack()
     user_password = p.get()
     
