@@ -1,21 +1,30 @@
-from SQL_init import *
+
 from tkinter import *
 from tkinter import messagebox
 
 root = Tk()
 
 def firstwin():
-    root.geometry("250x230")
+    root.geometry("250x300")
     root.title("LOGIN PAGE")
-    root.configure(bg="black")
     label1  = Label(root, text="CASH FLOW MASTER", fg = "white", bg = "black")
     label1.pack()
-    label2  = Label(root, text="", fg = "white", bg = "black")
-    label2.pack()
+    root.configure(bg="black")
+    def creates():
+        from create import win 
+        win()
+    label0  = Label(root, text="", fg = "white", bg = "black")
+    label0.pack()
+    button2 = Button(root, text="NEW USER?", command=creates, padx=5, pady=5, bg="teal" , fg = "white")    
+    button2.pack()
+    label0  = Label(root, text="", fg = "white", bg = "black")
+    label0.pack()
     label3  = Label(root, text="enter username:", fg = "white", bg = "black")
     label3.pack()
     u = Entry(root, width=30, fg = "white", bg = "black")
     u.pack()
+    label2  = Label(root, text="", fg = "white", bg = "black")
+    label2.pack()
     global username
     username = u.get()
     label4  = Label(root, text="enter password:", fg = "white", bg = "black")
