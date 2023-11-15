@@ -38,14 +38,15 @@ def firstwin():
                 Label(root, text= error_auth).pack()
             
         except m.Error as e:
-            error_mysql = messagebox.showwarning("ERROR", e)
-            Label(root, text= error_mysql).pack()
+            print('nah bro')
+            #error_mysql = messagebox.showwarning("ERROR", e)
+            #Label(root, text= error_mysql).pack()
 
         
 
     label5  = Label(root, text="", fg = "white", bg = "black")
     label5.pack()
-    button1 = Button(root, text="submit", command=verify, padx=10, pady=10, bg="dark green" , fg = "white")    
+    button1 = Button(root, text="submit", command=verify, padx=10, pady=10, bg="green" , fg = "white")    
     button1.pack()
     label0  = Label(root, text="", fg = "white", bg = "black")
     label0.pack()
