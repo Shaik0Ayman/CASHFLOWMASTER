@@ -34,17 +34,13 @@ def firstwin():
     global user_password
     user_password = p.get()
     def verify():
-        try:   
-            if (username == user_password):
-                root.destroy()
-                from page2 import secwin
-                secwin()
-            else:
-                error_auth = messagebox.showwarning("ERROR", "Incorrect username or password")
-                Label(root, text= error_auth).pack()
-        except m.ProgrammingError as e:
-            error_mysql = messagebox.showwarning("ERROR", e)
-            Label(root, text= error_mysql).pack()
+        if (username == user_password):
+            root.destroy()
+            from page2 import secwin
+            secwin()
+        else:
+            error_auth = messagebox.showwarning("ERROR", "Incorrect username or password")
+            Label(root, text= error_auth).pack()
     label5  = Label(root, text="", fg = "white", bg = "black")
     label5.pack()
     button1 = Button(root, text="submit", command=verify, padx=10, pady=10, bg="green" , fg = "white")    
