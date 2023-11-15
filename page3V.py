@@ -5,11 +5,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 window = tk.Tk()
 window.title('portfolio graph')
 fig = Figure(figsize=(5, 4), dpi=100)
-labels = ["Assets", "Expenditure", "Savings"]
+labels = ["Assets", "Expenditure"]
 A = 39
 E = 20
-S = 10
-sizes = [A, E, S]
+sizes = [A, E]
 ax = fig.add_subplot(111)
 ax.pie(sizes, labels=labels, autopct="%1.1f%%", shadow=False, startangle=90)
 canvas = FigureCanvasTkAgg(fig, master=window)
