@@ -26,9 +26,25 @@ def firstwin():
     p.pack()
     user_password = p.get()
     
+    def connect_cursor():
+        mydb = m.connect(
+            host="localhost",
+            user="root",
+            password="Pianist1"
+        )
+        cursor = mydb.cursor()
+        data_init(cursor)
+        return cursor
+
     def verify():
         try:
-            c = connect_cursor(sql_pass)
+            mydb = m.connect(
+                host="localhost",
+                user="root",
+                password="Pianist1"
+            )
+            c = mydb.cursor()
+            data_init(c)
             if user_check(c, username, user_password):
                 root.destroy()
                 from page2 import secwin
@@ -36,8 +52,8 @@ def firstwin():
             else:
                 error_auth = messagebox.showwarning("ERROR", "Incorrect username or password")
                 Label(root, text= error_auth).pack()
-            
-        except m.Error as e:
+                
+        except m.ProgrammingError as e:
             error_mysql = messagebox.showwarning("ERROR", e)
             Label(root, text= error_mysql).pack()
 
