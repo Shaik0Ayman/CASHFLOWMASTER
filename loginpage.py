@@ -23,16 +23,6 @@ def firstwin():
     p.pack()
     user_password = p.get()
     
-    def connect_cursor():
-        mydb = m.connect(
-            host="localhost",
-            user="root",
-            password="Pianist1"
-        )
-        cursor = mydb.cursor()
-        data_init(cursor)
-        return cursor
-
     def verify():
         try:
             if (username == user_password):
