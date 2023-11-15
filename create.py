@@ -24,7 +24,6 @@ def win():
     p.pack()
     global user_password
     user_password = p.get()
-    
     def dis():
         try:
             with open('users.bin', 'rb') as f:
