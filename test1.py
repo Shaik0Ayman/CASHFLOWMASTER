@@ -1,20 +1,8 @@
-import pickle
-with open("users.bin", "rb") as f:
-    data = pickle.load(f)
-print(data)
-import pickle
-with open("users.bin", "rb") as f:
-    data = pickle.load(f)
-print(data)
-import pickle
-with open("users.bin", "rb") as f:
-    data = pickle.load(f)
-print(data)
-import pickle
-with open("users.bin", "rb") as f:
-    data = pickle.load(f)
-print(data)
-import pickle
-with open("users.bin", "rb") as f:
-    data = pickle.load(f)
-print(data)
+import csv
+with open('users.csv', 'r') as f:
+    csv_reader = csv.reader(f)
+    for i in csv_reader:
+        print(i)
+        u = i[0]
+        p = i[1]
+        

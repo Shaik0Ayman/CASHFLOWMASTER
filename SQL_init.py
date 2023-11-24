@@ -10,12 +10,7 @@ udb = "cashflowmaster"
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(udb))
 cursor.execute("USE {}".format(udb))
-try:
-    with open('users.bin', 'rb') as f:
-        users = pk.load(f)
-except:
-    with open('users.bin', 'wb') as f:
-        pk.dump([], f)
+
 cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, password varchar(16), income int(20), exp int(20), emi int(20))")
 
 def create_user_tables(username):
