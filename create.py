@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from SQL_init import *
+
 
 root1 = Tk()
 
@@ -25,6 +25,7 @@ def win():
     global user_password
     user_password = p.get()
     def dis():
+        import pickle as pk
         try:
             with open('users.bin', 'rb') as f:
                 users = pk.load(f)
@@ -32,7 +33,7 @@ def win():
             with open('users.bin', 'wb') as f:
                 pk.dump([], f)
         with open('users.bin', 'ab') as f:
-            pk.dump([username, user_password, 0, 0, 0], f)
+            pk.dump({username:user_password}, f)
         root1.destroy()
     label4  = Label(root1, text="", fg = "white", bg = "black")
     label4.pack()    
