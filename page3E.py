@@ -13,7 +13,7 @@ def entry():
     monthly_salary_entry = Entry(top1, width=30)
     monthly_salary_entry.pack()
     avg_expenditure_label = Label(top1, text="Average Expenditure:")
-    avg_expenditure_label.pack()
+    avg_expenditure_label.pack()s
     avg_expenditure_entry = Entry(top1, width=30)
     avg_expenditure_entry.pack()  
     def assets():
