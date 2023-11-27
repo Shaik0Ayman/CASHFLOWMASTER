@@ -14,11 +14,11 @@ def firstwin():
     label0 = Label(root, text="", fg="white", bg="black")
     label0.pack()
 
-    def creat():
+    def create():
         from create import win 
         win()
 
-    button2 = Button(root, text="NEW USER?", command=creat, padx=5, pady=5, bg="teal", fg="white")
+    button2 = Button(root, text="NEW USER?", command=create, padx=5, pady=5, bg="teal", fg="white")
     button2.pack()
 
     label0 = Label(root, text="", fg="white", bg="black")

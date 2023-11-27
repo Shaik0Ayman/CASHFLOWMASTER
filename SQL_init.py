@@ -1,4 +1,3 @@
-import pickle as pk
 import mysql.connector as m
 
 db = m.connect(
@@ -10,17 +9,11 @@ udb = "cashflowmaster"
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(udb))
 cursor.execute("USE {}".format(udb))
-
 cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, password varchar(16), income int(20), exp int(20), emi int(20))")
 
 def create_user_tables(username):
     cursor.execute("CREATE TABLE IF NOT EXISTS assets_{}(asset_name varchar(20), asset_price int(20))".format(username))
     cursor.execute("CREATE TABLE IF NOT EXISTS expenses_{}(expense_name varchar(20), expense_price int(20))".format(username))
-
-# def create_user(username, user_password):
-    # cursor.execute("INSERT INTO users VALUES('{}', '{}', 0, 0, 0)".format(username, user_password))
-    # db.commit()
-    # create_user_tables(username)
 
 def user_check(username, user_password):
     if (username in cursor.execute("SELECT username FROM users WHERE username = {}".format(username)).fetchone()[0] and
