@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import csv
+from SQL_init import *
 
 root1 = Tk()
 
@@ -20,7 +21,7 @@ def win():
             messagebox.showerror("Error", "Please enter both username and password")
             return
 
-        # Save the user to a CSV file
+        # Save the user to a CSV file and create user tables
         with open("users.csv", 'a+', newline='') as f:
             csv_writer = csv.writer(f)
             csv_writer.writerow([username, user_password])
@@ -58,6 +59,4 @@ def win():
     # Button to trigger the registration function
     button2 = Button(root1, text="confirm", command=register_user, padx=5, pady=5, bg="green", fg="white")
     button2.pack()
-    
-win()
 

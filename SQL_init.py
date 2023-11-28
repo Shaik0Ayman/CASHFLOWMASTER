@@ -9,7 +9,12 @@ udb = "cashflowmaster"
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(udb))
 cursor.execute("USE {}".format(udb))
-cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, password varchar(16), income int(20), exp int(20), emi int(20))")
+cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, income int(20), exp int(20), emi int(20))")
+
+def create_user(username):
+    create_user_tables(username)
+    cursor.execute("INSERT INTO users VALUES('{}', 0, 0, 0)".format(username))
+    db.commit()
 
 def create_user_tables(username):
     cursor.execute("CREATE TABLE IF NOT EXISTS assets_{}(asset_name varchar(20), asset_price int(20))".format(username))
