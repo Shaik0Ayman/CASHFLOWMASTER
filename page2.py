@@ -11,8 +11,6 @@ def secwin():
     label1 = Label(top, text="CASH FLOW MASTER")
     label1.pack() 
 
-    def first_time_user():
-
     def entry_():
         from page3E import entry
         entry()

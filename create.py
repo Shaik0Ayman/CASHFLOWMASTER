@@ -25,6 +25,7 @@ def win():
         with open("users.csv", 'a+', newline='') as f:
             csv_writer = csv.writer(f)
             csv_writer.writerow([username, user_password])
+            create_user(username)
 
         # Display a confirmation message
         messagebox.showinfo("Success", "User registered successfully")
