@@ -1,2 +1,0 @@
-from loginpage import *
-firstwin()
