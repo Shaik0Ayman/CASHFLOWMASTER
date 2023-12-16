@@ -17,15 +17,23 @@ with open('temp.txt', 'r+') as f:
 cursor.execute("SELECT SUM(expense_price) from expenses_{};".format(username));
 assets = cursor.fetchone()
 for i in assets:
-    print (i)
+    Ass = i
+cursor.execute("select sum(asset_price) from assets_{};".format(username));
+exp = cursor.fetchone()
+for i in exp:
+    Exx = i
+
+    
 window = tk.Tk()
 window.title('portfolio graph')
+networth_label = tk.Label(window, text="NETWORTH", font=("Arial", 20))
+networth_label.pack()
 
 fig = Figure(figsize=(5, 4), dpi=100)
 
 labels = ["Assets", "Expenditure"]
-A = 39
-E = 20
+A = Exx
+E = Ass
 sizes = [A, E]
 
 # Define the colors for the sectors
