@@ -1,5 +1,7 @@
 # CASHFLOWMASTER
-its a overcomplicated class 12 CS project 👍
-portfolio manager application
-tkinter GUI. Hello World!! 
+PORTFOLIO MANAGER 
+GUI (Tikinter)
+GRAPHS
+ACCURATE CALCULATIONS
+SECURE MYSQL DMB WITH DATA
 
