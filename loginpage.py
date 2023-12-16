@@ -54,7 +54,8 @@ def firstwin():
                 if username_input == stored_username and user_password_input == stored_password:
                     found = True
                     break
-
+        with open('temp.txt' , 'w') as f:
+            f.write(username_input)
         if found:
             root.destroy()
             from page2 import secwin
