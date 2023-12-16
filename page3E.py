@@ -6,7 +6,7 @@ import csv
 top1 = Tk()
 
 def entry():
-    top1.geometry("500x500")
+    top1.geometry("300x200")
     top1.title("ASSET ENTRY")
     top1.configure(bg="black")
 
