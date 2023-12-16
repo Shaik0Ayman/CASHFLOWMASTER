@@ -6,6 +6,8 @@ db = m.connect(
     passwd="0786",
 )
 udb = "cashflowmaster"
+with open('temp.txt', 'r+') as f:
+    username = f.read()
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(udb))
 cursor.execute("USE {}".format(udb))
