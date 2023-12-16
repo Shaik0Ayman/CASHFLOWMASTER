@@ -11,7 +11,7 @@ with open('temp.txt', 'r+') as f:
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(udb))
 cursor.execute("USE {}".format(udb))
-cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, income int(20), exp int(20), emi int(20))")
+cursor.execute("CREATE TABLE IF NOT EXISTS users (username varchar(30) PRIMARY KEY, income int(40), exp int(40), emi int(40))")
 
 def create_user(username):
     create_user_tables(username)
@@ -19,8 +19,8 @@ def create_user(username):
     db.commit()
 
 def create_user_tables(username):
-    cursor.execute("CREATE TABLE IF NOT EXISTS assets_{}(asset_name varchar(20), asset_price int(20))".format(username))
-    cursor.execute("CREATE TABLE IF NOT EXISTS expenses_{}(expense_name varchar(20), expense_price int(20))".format(username))
+    cursor.execute("CREATE TABLE IF NOT EXISTS assets_{}(asset_name varchar(40), asset_price int(40))".format(username))
+    cursor.execute("CREATE TABLE IF NOT EXISTS expenses_{}(expense_name varchar(40), expense_price int(40))".format(username))
 
 def user_check(username, user_password):
     if (username in cursor.execute("SELECT username FROM users WHERE username = {}".format(username)).fetchone()[0] and
