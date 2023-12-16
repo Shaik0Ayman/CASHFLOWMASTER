@@ -3,7 +3,7 @@ import mysql.connector as m
 db = m.connect(
     host="localhost",
     user="root",
-    passwd="Pianist1",
+    passwd="0786",
 )
 udb = "cashflowmaster"
 cursor = db.cursor()

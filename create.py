@@ -25,9 +25,13 @@ def win():
             csv_writer = csv.writer(f)
             csv_writer.writerow([username, user_password])
 
+        import SQL_init
+        SQL_init.create_user_tables(username)
+
         # Display a confirmation message
         messagebox.showinfo("Success", "User registered successfully")
 
+        
         # Clear the entry fields
         username_entry.delete(0, END)
         password_entry.delete(0, END)
